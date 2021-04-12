@@ -6,6 +6,7 @@ const autoprefixer = require("autoprefixer");
 const groupmq = require("gulp-group-css-media-queries");
 const bs = require("browser-sync");
 const cleanCSS = require("gulp-clean-css");
+var rename = require('gulp-rename');
 
 const SASS_SOURCES = [
   "./*.scss", // This picks up our style.scss file at the root of the theme
@@ -36,6 +37,10 @@ const SASS_SOURCES = [
     )
     .pipe(groupmq()) // Group media queries!
     .pipe(cleanCSS({ compatibility: "ie8" }))
+    .pipe(rename({
+        basename: "build_styles",
+        suffix: ".min",
+      }))
     .pipe(gulp.dest("css/")) // Output compiled files in the same dir as Sass sources
     .pipe(bs.stream())
 ); // Stream to browserSync
