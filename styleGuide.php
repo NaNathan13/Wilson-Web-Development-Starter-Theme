@@ -2,6 +2,7 @@
 /**
  * Template Name: Style Guide
  *
+ * Template for the contact page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
