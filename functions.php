@@ -1,6 +1,6 @@
 <?php
 /**
- * Wilson Web Development Starter Theme functions and definitions
+ * Wilson Web Development functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -24,7 +24,7 @@ if ( ! function_exists( 'wilson_web_development_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Wilson Web Development Starter Theme, use a find and replace
+		 * If you're building a theme based on Wilson Web Development, use a find and replace
 		 * to change 'wilson-web-development' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'wilson-web-development', get_template_directory() . '/languages' );
@@ -142,6 +142,7 @@ add_action( 'widgets_init', 'wilson_web_development_widgets_init' );
 function wilson_web_development_scripts() {
 	wp_enqueue_style( 'wilson-web-development-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'wilson-web-development-style', 'rtl', 'replace' );
+	wp_enqueue_style ('theme_styles', get_template_directory_uri().'/css/style.css');
 
 	wp_enqueue_script( 'wilson-web-development-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
