@@ -1,7 +1,7 @@
 
 <?php
 /*
- * Template Name: Contact Page
+ * Template Name: Contact
  * description: Page template for contact page.
   
 
